@@ -1,5 +1,7 @@
 package co.simplon.springticketapi.dao;
 
+import co.simplon.springticketapi.model.Ticket;
+
 import java.util.List;
 
 public interface Dao<T> {
@@ -19,17 +21,20 @@ public interface Dao<T> {
      */
     List<T> getAll();
 
+
     /**
      * Fonction de sauvegarde d'un objet en base de données.
      *
      * @param t l'objet à sauvegarder (à créer ou mettre à jour).
+     * @return
      */
-    void save(T t);
+    T save(T t);
 
     /**
      * Fonction de suppression d'un objet en base de données.
      *
      * @param id l'identifiant de l'objet à supprimer.
+     * @return
      */
-    void delete(Long id);
+    T delete(Long id);
 }
